@@ -1,0 +1,33 @@
+﻿@using DIDemo.Services.IServices
+@inject IPermissionServiceScoped scoped;
+@inject IPermissionServiceSingleton singleton;
+@inject IPermissionServiceTransient transient;
+
+@{
+    var scopedPermission = scoped.GetPermission();
+    var singletonPermission = singleton.GetPermission();
+    var transientPermission = transient.GetPermission();
+} 
+
+<table class="table table-bordered">
+    <tr>
+        <th>Scoped:</th>
+        <th>Singleton</th>
+        <th>Transient</th>
+    </tr>
+    <tr>
+        <td>
+            Expected Permission - Modify <br />
+            Actual Permission - @scopedPermission
+        </td>
+        <td>
+            Expected Permission - Modify <br />
+            Actual Permission - @singletonPermission
+        </td>
+        <td>
+            Expected Permission - Read <br />
+            Actual Permission - @transientPermission
+        </td>
+
+    </tr>
+</table>

@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<form asp-action="Access" method="post">
+    <div class="form-group">
+        <input class="form-control" type="text" name="secret" placeholder="Enter Secret for ability to modify:"/>
+       
+    </div>
+    <button  type="submit" class="btn btn-primary" name="submit">Submit</button>
+</form>
